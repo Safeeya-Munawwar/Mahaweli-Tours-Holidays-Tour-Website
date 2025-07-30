@@ -105,27 +105,33 @@ A comprehensive full-stack **tourism website** developed using **React, Node.js,
 
 ```bash
 git clone https://github.com/YourUsername/Mahaweli-Tours-Holidays-Tour-Website.git
-```
+
+```bash
 cd Mahaweli-Tours-Holidays-Tour-Website
 
 ### Step 2: Setup Backend
 
 ```bash
 cd backend
-```
+
+```bash
 npm install
 
 Create a .env file in /backend with the following:
 
 ```bash
 PORT=5000
-```
+
+```bash
 MONGO_URI=your_mongodb_uri
-```
+
+```bash
 EMAILJS_SERVICE_ID=your_emailjs_service_id
-```
+
+```bash
 EMAILJS_TEMPLATE_ID=your_emailjs_template_id
-```
+
+```bash
 EMAILJS_USER_ID=your_emailjs_user_id
 
 Start backend server:
@@ -137,7 +143,8 @@ npm run dev
 
 ```bash
 cd ../frontend
-```
+
+```bash
 npm install
 
 Create a .env file in /frontend with:
