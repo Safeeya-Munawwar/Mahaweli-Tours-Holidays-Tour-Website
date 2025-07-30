@@ -86,15 +86,11 @@ A comprehensive full-stack **tourism website** developed using **React, Node.js,
 
 ---
 
-## 📷 Video
+## 📷 Watch Our Tour Video
 
-### Watch Our Tour Video
+You can watch the tour video on Google Drive here:
 
-<video width="600" controls>
-  <source src="assets/YouCut_20250730_201607797_V1.mp4" type="video/mp4" />
-  Your browser does not support the video tag.
-</video>
-
+[Watch Tour Video on Google Drive](https://drive.google.com/file/d/FILE_ID/view?usp=sharing)
 
 ---
 
