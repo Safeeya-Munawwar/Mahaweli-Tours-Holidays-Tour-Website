@@ -27,14 +27,7 @@ A comprehensive full-stack **tourism website** developed using **React, Node.js,
 
 ## 🚀 Live Demo
 
-[![Watch the Demo](./demo.PNG)](https://drive.google.com/file/d/1GdyyQNFKTvMLBfFikFHdbGaiDYhA2axd/view?usp=drive_link)
-
-## 📷 Watch Our Tour Video
-
-You can watch the tour video on Google Drive here:
-
-[Watch Tour Video on Google Drive](https://drive.google.com/file/d/12iy9OCNnzagm19sol42kA0vgvDicOlTp/view?usp=drive_link)
-
+[![Watch the Demo](./demo.PNG)](https://drive.google.com/file/d/12iy9OCNnzagm19sol42kA0vgvDicOlTp/view?usp=drive_link)
 
 ---
 
