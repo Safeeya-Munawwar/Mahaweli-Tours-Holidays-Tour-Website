@@ -88,6 +88,12 @@ A comprehensive full-stack **tourism website** developed using **React, Node.js,
 
 ## 📷 Video
 
+### Watch Our Tour Video
+
+<video width="600" controls>
+  <source src="assets/YouCut_20250730_201607797_V1.mp4" type="video/mp4" />
+  Your browser does not support the video tag.
+</video>
 
 
 ---
