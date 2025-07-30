@@ -4,18 +4,6 @@ A comprehensive full-stack **tourism website** developed using **React, Node.js,
 
 ---
 
-## 📋 Table of Contents
-
-- [Features](#features)
-- [Technologies Used](#technologies-used)
-- [Database Collections](#database-collections)
-- [Installation](#installation)
-- [Usage](#usage)
-- [Screenshots](#screenshots)
-- [Contact](#contact)
-
----
-
 ## ✅ Features
 
 ### 🌐 Public Website
@@ -98,87 +86,13 @@ A comprehensive full-stack **tourism website** developed using **React, Node.js,
 
 ---
 
-## ⚙️ Installation
+## 📷 Video
 
 
-### Step 1: Clone the Repository
-
-```bash
-git clone https://github.com/YourUsername/Mahaweli-Tours-Holidays-Tour-Website.git
-
-```bash
-cd Mahaweli-Tours-Holidays-Tour-Website
-
-### Step 2: Setup Backend
-
-```bash
-cd backend
-
-```bash
-npm install
-
-Create a .env file in /backend with the following:
-
-```bash
-PORT=5000
-
-```bash
-MONGO_URI=your_mongodb_uri
-
-```bash
-EMAILJS_SERVICE_ID=your_emailjs_service_id
-
-```bash
-EMAILJS_TEMPLATE_ID=your_emailjs_template_id
-
-```bash
-EMAILJS_USER_ID=your_emailjs_user_id
-
-Start backend server:
-
-```bash
-npm run dev
-
-### Step 3: Setup Frontend
-
-```bash
-cd ../frontend
-
-```bash
-npm install
-
-Create a .env file in /frontend with:
-
-```bash
-REACT_APP_API_BASE_URL=http://localhost:5000
-
-Start React app:
-
-```bash
-npm start
-
----
-
-## 📷 Screenshots
-
-### 🔹 Login
-![Dashboard Screenshot](screenshots/login.PNG)
-
-### 🔹 Dashboard
-![Dashboard Screenshot](screenshots/home.PNG)
-
-### 🔹 Menu 
-![Reservation Screenshot](screenshots/menu.PNG)
-
-### 🔹 Orders Page
-![Reservation Screenshot](screenshots/orders.PNG)
-
-### 🔹 Tables
-![Reservation Screenshot](screenshots/list.PNG)
 
 ---
 
 ## 📩 Contact
 
    Safeeya Munawwar - shafiyasha0036@gmail.com     
- like this provide Mahawali Tours & Holidays tour website, readme
+
