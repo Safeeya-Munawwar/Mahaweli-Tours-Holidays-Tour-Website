@@ -7,7 +7,7 @@ A comprehensive full-stack **tourism website** developed using **React, Node.js,
 ## ✅ Features
 
 ### 🌐 Public Website
-- Browse **Day Tours** and **Round Tours**
+- Browse **Special Tours** and **Regular Tours**
 - View **Tour Details** with descriptions and pricing
 - **Booking Form** with EmailJS integration
 - Read **Travel Blog** posts
@@ -17,7 +17,7 @@ A comprehensive full-stack **tourism website** developed using **React, Node.js,
 ### 🔐 Admin Panel
 - Secure **Admin Login**
 - Add, Edit, and Delete:
-  - Tour Packages (Day & Round)
+  - Tour Packages (Special & Regular)
   - Blog Posts
   - Gallery Images (GridFS-based)
   - Homepage content (title, intro, stats, etc.)
@@ -27,7 +27,7 @@ A comprehensive full-stack **tourism website** developed using **React, Node.js,
 
 ## 🚀 Live Demo
 
-[![Watch the Demo](./demo.PNG)](https://drive.google.com/file/d/12iy9OCNnzagm19sol42kA0vgvDicOlTp/view?usp=drive_link)
+[![Watch the Demo](./demo.PNG)](https://drive.google.com/file/d/13RgumugaSb1dPfPYgPXTM0SM4tAO9L6W/view?usp=drive_link)
 
 ---
 
