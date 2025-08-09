@@ -5,7 +5,7 @@ import { fileURLToPath } from "url";
 import GalleryPhoto from "../models/GalleryPhoto.js";
 import fs from "fs";
 
-const router = express.Router();
+const router = express.Router(); 
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);

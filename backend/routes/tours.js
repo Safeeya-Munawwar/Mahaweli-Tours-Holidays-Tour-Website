@@ -19,23 +19,34 @@ const storage = multer.diskStorage({
 });
 const upload = multer({ storage });
 
-// GET all tours (public)
+// GET all tours
 router.get("/", async (req, res) => {
   try {
     const tours = await Tour.find();
     res.json(tours);
   } catch (err) {
-    console.error(err);
+    console.error("GET error:", err);
     res.status(500).json({ error: "Failed to fetch tours" });
   }
 });
 
-// POST add new tour (admin)
+// POST add new tour
 router.post("/", upload.single("image"), async (req, res) => {
   try {
-    const { title, location, description, rating, type, price, duration } = req.body;
+    const {
+      title,
+      location,
+      description,
+      rating,
+      type,
+      price,
+      duration,
+      isSpecial,
+    } = req.body;
 
-    if (!req.file) return res.status(400).json({ error: "Image is required" });
+    if (!req.file) {
+      return res.status(400).json({ error: "Image is required" });
+    }
 
     const newTour = new Tour({
       title,
@@ -45,6 +56,7 @@ router.post("/", upload.single("image"), async (req, res) => {
       type,
       price: price ? Number(price) : 0,
       duration,
+      isSpecial: isSpecial === "true",
       imageUrl: `/uploads/${req.file.filename}`,
       imageFileName: req.file.originalname,
     });
@@ -52,16 +64,25 @@ router.post("/", upload.single("image"), async (req, res) => {
     await newTour.save();
     res.status(201).json(newTour);
   } catch (err) {
-    console.error(err);
+    console.error("POST error:", err);
     res.status(500).json({ error: "Failed to add tour" });
   }
 });
 
-// PUT update tour (admin)
+// PUT update tour
 router.put("/:id", upload.single("image"), async (req, res) => {
   try {
     const { id } = req.params;
-    const { title, location, description, rating, type, price, duration } = req.body;
+    const {
+      title,
+      location,
+      description,
+      rating,
+      type,
+      price,
+      duration,
+      isSpecial,
+    } = req.body;
 
     const tour = await Tour.findById(id);
     if (!tour) return res.status(404).json({ error: "Tour not found" });
@@ -73,11 +94,18 @@ router.put("/:id", upload.single("image"), async (req, res) => {
     tour.type = type || tour.type;
     tour.price = price !== undefined ? Number(price) : tour.price;
     tour.duration = duration || tour.duration;
+    tour.isSpecial = isSpecial === "true"; // ✅ fixed
 
     if (req.file) {
-      // Delete old image file if exists
-      const oldImagePath = path.join(__dirname, "..", tour.imageUrl.replace("/uploads/", "uploads/"));
-      if (fs.existsSync(oldImagePath)) fs.unlinkSync(oldImagePath);
+      // Delete old image
+      const oldImagePath = path.join(
+        __dirname,
+        "..",
+        tour.imageUrl.replace("/uploads/", "uploads/")
+      );
+      if (fs.existsSync(oldImagePath)) {
+        fs.unlinkSync(oldImagePath);
+      }
 
       tour.imageUrl = `/uploads/${req.file.filename}`;
       tour.imageFileName = req.file.originalname;
@@ -86,39 +114,36 @@ router.put("/:id", upload.single("image"), async (req, res) => {
     await tour.save();
     res.json(tour);
   } catch (err) {
-    console.error(err);
+    console.error("PUT error:", err);
     res.status(500).json({ error: "Failed to update tour" });
   }
 });
 
-// DELETE a tour (admin)
+// DELETE a tour
 router.delete("/:id", async (req, res) => {
   try {
     const { id } = req.params;
     const tour = await Tour.findById(id);
     if (!tour) return res.status(404).json({ error: "Tour not found" });
 
+    // Delete image if exists
     if (tour.imageUrl) {
-      const imagePath = path.join(__dirname, "..", tour.imageUrl.replace("/uploads/", "uploads/"));
-      console.log("Deleting image at:", imagePath);
+      const imagePath = path.join(
+        __dirname,
+        "..",
+        tour.imageUrl.replace("/uploads/", "uploads/")
+      );
       if (fs.existsSync(imagePath)) {
         fs.unlinkSync(imagePath);
-        console.log("Image deleted");
-      } else {
-        console.log("Image file not found on disk");
       }
-    } else {
-      console.log("No imageUrl found on tour");
     }
 
     await tour.deleteOne();
-
     res.json({ success: true });
   } catch (err) {
-    console.error("Delete error:", err);
+    console.error("DELETE error:", err);
     res.status(500).json({ error: "Failed to delete tour" });
   }
 });
-
 
 export default router;
