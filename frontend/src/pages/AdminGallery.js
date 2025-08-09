@@ -43,7 +43,7 @@ function AdminGallery() {
       }));
     }
   };
-
+ 
   // Reset form
   const resetForm = () => {
     setFormData({ id: null, title: "", imageFile: null, imagePreview: "" });
@@ -71,12 +71,12 @@ function AdminGallery() {
         await axios.put(`/api/gallery/${formData.id}`, formPayload, {
           headers: { "Content-Type": "multipart/form-data" },
         });
-        setMessage("Photo updated successfully!");
+        alert("Photo Updated Successfully!");
       } else {
         await axios.post("/api/gallery", formPayload, {
           headers: { "Content-Type": "multipart/form-data" },
         });
-        setMessage("Photo added successfully!");
+        alert("Photo Added Successfully!");
       }
       resetForm();
       fetchPhotos();
@@ -96,7 +96,7 @@ function AdminGallery() {
     if (!window.confirm("Are you sure you want to delete this photo?")) return;
     try {
       await axios.delete(`/api/gallery/${id}`);
-      setMessage("Photo deleted successfully!");
+      alert("Photo Deleted!");
       fetchPhotos();
       setTimeout(() => setMessage(""), 3000);
     } catch (error) {
@@ -171,7 +171,12 @@ function AdminGallery() {
           marginBottom: 40,
         }}
       >
-        <form onSubmit={handleSubmit} style={{ width: "100%", maxWidth: 500 }}>
+        <form onSubmit={handleSubmit} style={{ width: 500, maxWidth: "600px",
+    margin: "20px",
+    padding: "20px",
+    background: "#f9f9f9",
+    borderRadius: "10px",
+    boxShadow: "0 4px 8px rgba(0,0,0,0.1)", }}>
           <h2 style={{ color: "#064420", textAlign: "center" }}>
             {formData.id ? "Edit Photo" : "Add New Photo"}
           </h2>
@@ -185,7 +190,12 @@ function AdminGallery() {
               onChange={handleInputChange}
               placeholder="Photo Title"
               required
-              style={{ width: "100%", padding: 10, fontSize: 14 }}
+              style={{   width: 480, 
+                padding: "10px",
+                margin: "10px 0",
+                borderRadius: "5px",
+                border: "1px solid #ccc",
+                fontSize: "1rem",}}
             />
           </div>
 
@@ -197,48 +207,69 @@ function AdminGallery() {
               accept="image/*"
               onChange={handleFileChange}
               ref={fileInputRef}
+              style={{
+                width: 480, 
+                padding: "10px",
+                margin: "10px 0",
+                borderRadius: "5px",
+                border: "1px solid #ccc",
+                fontSize: "1rem",
+          }}
             />
+          
             {formData.imagePreview && (
               <img
                 src={formData.imagePreview}
                 alt="Preview"
                 style={{ maxWidth: 200, marginTop: 10, borderRadius: 4 }}
               />
+              
             )}
           </div>
-
+          <div style={{ textAlign: "center" }}>
           <button
             type="submit"
             style={{
-              backgroundColor: "#064420",
+              backgroundColor: "#2c5d30",
               color: "white",
-              padding: "8px 16px",
               border: "none",
+              padding: "10px 20px",
+              borderRadius: "5px",
               cursor: "pointer",
-              fontSize: 14,
-              borderRadius: 4,
+              marginRight: "10px",
+              marginTop: "20px",
+              textAlign: "center",
+           width: 250,   
             }}
           >
             {formData.id ? "Update Photo" : "Add Photo"}
           </button>
+          </div>
 
           {formData.id && (
+                 <div style={{ textAlign: "center" }}>
             <button
               type="button"
               onClick={resetForm}
               style={{
-                marginLeft: 10,
+               
                 backgroundColor: "#b30000",
-                color: "white",
-                padding: "8px 16px",
-                border: "none",
-                cursor: "pointer",
-                fontSize: 14,
-                borderRadius: 4,
+               
+              color: "white",
+              border: "none",
+              padding: "10px 20px",
+              borderRadius: "5px",
+              cursor: "pointer",
+              marginRight: "10px",
+              marginTop: "20px",
+              textAlign: "center",
+           width: 250,   
+
               }}
             >
               Cancel
             </button>
+            </div>
           )}
         </form>
       </div>

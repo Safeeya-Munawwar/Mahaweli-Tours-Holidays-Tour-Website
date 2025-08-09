@@ -1,7 +1,8 @@
 // src/App.js
 import React from "react";
 import { Routes, Route, useLocation } from "react-router-dom";
-
+import './i18n';
+import FloatingWhatsApp from './components/FloatingWhatsApp';
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 
@@ -58,9 +59,11 @@ function App() {
           <Route path="/contact" element={<Contact />} />
           <Route path="/admin-login" element={<AdminLogin />} />
         </Routes>
+                 
       )}
 
       {!isAdminRoute && <Footer />}
+      <FloatingWhatsApp />
     </>
   );
 }

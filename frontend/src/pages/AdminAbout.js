@@ -37,7 +37,7 @@ function AdminAbout() {
     const dataToSave = { aboutTexts, testimonials };
     localStorage.setItem(LOCALSTORAGE_KEY, JSON.stringify(dataToSave));
     setSaving(false);
-    alert("Changes saved!");
+    alert("Changes Saved Successfully!");
   };
 
   // Handlers to edit about texts and testimonials

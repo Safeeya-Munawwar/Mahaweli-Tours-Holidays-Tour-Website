@@ -60,7 +60,7 @@ function AdminContact() {
 
   const handleSave = () => {
     localStorage.setItem(LOCALSTORAGE_KEY, JSON.stringify(contactInfo));
-    alert("Contact information saved!");
+    alert("Contact Information Saved Successfully!");
     setEditing(false);
   };
 

@@ -118,7 +118,7 @@ const Footer = () => {
           color: "#666",
         }}
       >
-        ©2025 Mahaweli Tours. All rights reserved | Nuwalidigital Solutions.
+        ©2025 Mahaweli Tours. All rights reserved | Developed By: Safeeya Munawwar
       </p>
     </footer>
   );

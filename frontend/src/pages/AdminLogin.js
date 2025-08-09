@@ -16,6 +16,7 @@ function AdminLogin() {
     e.preventDefault();
     if (username === ADMIN_USERNAME && password === ADMIN_PASSWORD) {
       localStorage.setItem("isAdminLoggedIn", "true");
+      alert("Login Successfull!");
       navigate("/admin-dashboard");
     } else {
       setError("Invalid username or password");

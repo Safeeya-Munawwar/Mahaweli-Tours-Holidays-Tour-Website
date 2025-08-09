@@ -5,6 +5,7 @@ function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
   const location = useLocation();
 
+
   const navLinks = [
     { to: "/", label: "Home" },
     { to: "/tours", label: "Tour Packages" },
@@ -64,6 +65,8 @@ function Navbar() {
         </span>
       </Link>
 
+
+    
       {/* Desktop Nav */}
       <div className="desktop-nav" style={{ display: "flex", alignItems: "center", gap: "16px" }}>
         {navLinks.map(({ to, label }) => (

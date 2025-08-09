@@ -4,6 +4,13 @@ import { Link } from "react-router-dom";
 
 const Blog = () => {
   const [blogs, setBlogs] = useState([]);
+  const [searchTerm, setSearchTerm] = useState("");
+
+const filteredBlogs = blogs.filter(b =>
+  b.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+  b.content.toLowerCase().includes(searchTerm.toLowerCase())
+);
+
 
   useEffect(() => {
     axios.get("http://localhost:5000/api/blogs").then((res) => setBlogs(res.data));
@@ -18,6 +25,57 @@ const Blog = () => {
         fontFamily: "'Segoe UI', Tahoma, Geneva, Verdana, sans-serif",
       }}
     >
+ 
+      
+{/* Search Input with Icon */}
+<div
+  style={{
+    position: "relative",
+    maxWidth: 400,
+    margin: "0 0 30px auto", // right align container with auto left margin
+    width: "100%",
+  }}
+>
+
+  <input
+    type="text"
+    placeholder="Search blogs by title..."
+    value={searchTerm}
+    onChange={(e) => setSearchTerm(e.target.value)}
+    style={{
+      width: "100%",
+      padding: "10px 40px 10px 15px", // extra right padding for icon
+      fontSize: "1rem",
+      borderRadius: 8,
+      border: "1px solid #ccc",
+      boxShadow: "0 1px 3px rgba(0,0,0,0.1)",
+      outline: "none",
+      boxSizing: "border-box",
+    }}
+  />
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="#888"
+    strokeWidth="2"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+    style={{
+      position: "absolute",
+      right: 12,
+      top: "50%",
+      transform: "translateY(-50%)",
+      width: 20,
+      height: 20,
+      pointerEvents: "none",
+    }}
+  >
+    <circle cx="11" cy="11" r="7" />
+    <line x1="21" y1="21" x2="16.65" y2="16.65" />
+  </svg>
+</div>
+
                 <h2
         style={{
           fontFamily: "'Great Vibes', cursive",
@@ -40,7 +98,7 @@ const Blog = () => {
           gap: 20,
         }}
       >
-        {blogs.map((b) => (
+        {filteredBlogs.map((b) => (
           <div
             key={b._id}
             style={{

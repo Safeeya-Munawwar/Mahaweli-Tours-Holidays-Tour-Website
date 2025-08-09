@@ -49,10 +49,10 @@ const AdminBlog = () => {
 
       if (editId) {
         await axios.put(`http://localhost:5000/api/blogs/${editId}`, formData);
-        setMessage("Blog updated successfully!");
+        alert("Blog Updated Successfully!");
       } else {
         await axios.post("http://localhost:5000/api/blogs", formData);
-        setMessage("Blog posted successfully!");
+        alert("Blog Posted Successfully!");
       }
 
       setTitle("");
@@ -84,7 +84,7 @@ const AdminBlog = () => {
     if (window.confirm("Are you sure you want to delete this blog?")) {
       try {
         await axios.delete(`http://localhost:5000/api/blogs/${id}`);
-        setMessage("Blog deleted.");
+        alert("Blog Deleted.");
         fetchBlogs();
       } catch (error) {
         console.error("Delete failed:", error);
@@ -132,7 +132,12 @@ const AdminBlog = () => {
   <form
     onSubmit={handleSubmit}
     encType="multipart/form-data"
-    style={{ width: "100%", maxWidth: 500 }}
+    style={{ width: 600, maxWidth: "600px",
+    margin: "20px",
+    padding: "20px",
+    background: "#f9f9f9",
+    borderRadius: "10px",
+    boxShadow: "0 4px 8px rgba(0,0,0,0.1)", }}
   >
     <h2 style={{ color: "#064420", textAlign: "center" }}>
       {editId ? "Edit Blog Post" : "Add New Blog Post"}
@@ -144,7 +149,12 @@ const AdminBlog = () => {
               value={title}
               onChange={(e) => setTitle(e.target.value)}
               required
-              style={{ width: "100%", padding: 10, fontSize: 14 }}
+              style={{   width: 580, 
+                padding: "10px",
+                margin: "10px 0",
+                borderRadius: "5px",
+                border: "1px solid #ccc",
+                fontSize: "1rem",}}
             />
           </div>
 
@@ -155,7 +165,12 @@ const AdminBlog = () => {
               onChange={(e) => setContent(e.target.value)}
               rows={5}
               required
-              style={{ width: "100%", padding: 10, fontSize: 14 }}
+              style={{   width: 580, 
+                padding: "10px",
+                margin: "10px 0",
+                borderRadius: "5px",
+                border: "1px solid #ccc",
+                fontSize: "1rem",}}
             />
           </div>
 
@@ -165,30 +180,44 @@ const AdminBlog = () => {
               type="file"
               accept="image/*"
               onChange={handleImageChange}
+              style={{
+                width: 580, 
+                padding: "10px",
+                margin: "10px 0",
+                borderRadius: "5px",
+                border: "1px solid #ccc",
+                fontSize: "1rem",
+          }}
             />
             {imagePreview && (
               <img
                 src={imagePreview}
                 alt="Preview"
-                style={{ width: "100%", maxWidth: 200, marginTop: 10, borderRadius: 4 }}
+              
               />
             )}
           </div>
 
+          <div style={{ textAlign: "center" }}>
           <button
             type="submit"
             style={{
-              backgroundColor: "#064420",
+              backgroundColor: "#2c5d30",
               color: "white",
-              padding: "8px 16px",
               border: "none",
+              padding: "10px 20px",
+              borderRadius: "5px",
               cursor: "pointer",
-              fontSize: 14,
-              borderRadius: 4,
+              marginRight: "10px",
+              marginTop: "20px",
+              textAlign: "center",
+           width: 450,   
             }}
           >
             {editId ? "Update Blog" : "Post Blog"}
           </button>
+          </div>
+
         </form>
       </div>
 

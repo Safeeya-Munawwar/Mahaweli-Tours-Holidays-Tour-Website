@@ -41,7 +41,7 @@ function AdminHome() {
 
       await axios.put("http://localhost:5000/api/home-content", payload);
 
-      alert("Content updated successfully!");
+      alert("Content Updated Successfully!");
     } catch (error) {
       console.error("Update failed", error);
       alert("Failed to update content.");
