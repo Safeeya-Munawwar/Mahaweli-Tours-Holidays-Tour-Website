@@ -7,21 +7,24 @@ A comprehensive full-stack **tourism website** developed using **React, Node.js,
 ## ✅ Features
 
 ### 🌐 Public Website
-- Browse **Special Tours** and **Regular Tours**
-- View **Tour Details** with descriptions and pricing
-- **Booking Form** with EmailJS integration
-- Read **Travel Blog** posts
-- Browse stunning images in the **Gallery**
-- View homepage stats and highlights
+- Browse **Special Tours** and **Regular Tours** with dynamic filtering
+- View **Tour Details** with descriptions, images, and pricing
+- **Booking Form** integrated with EmailJS for direct inquiries
+- Download detailed **Itinerary PDF** for tours using **jsPDF**
+- Read engaging **Travel Blog** posts with images
+- Explore a stunning **Gallery** with smooth hover image effects
+- Responsive **Floating WhatsApp** button for instant contact
+- Interactive **Navigation Bar** with hover effects for better UX
+- View homepage stats, achievements, and highlights updated live
 
 ### 🔐 Admin Panel
-- Secure **Admin Login**
+- Secure Admin Login with protected routes
 - Add, Edit, and Delete:
-  - Tour Packages (Special & Regular)
-  - Blog Posts
-  - Gallery Images (GridFS-based)
-  - Homepage content (title, intro, stats, etc.)
-- All changes reflect live on the public website
+    - Tour Packages (Special & Regular)
+    - Blog Posts
+    - Gallery Images (using GridFS for scalable image storage)
+    - Homepage content (headline, intro text, visitor stats)
+- Real-time content updates reflected on the public website
 
 ---
 
@@ -34,18 +37,20 @@ A comprehensive full-stack **tourism website** developed using **React, Node.js,
 ## 🛠️ Technologies Used
 
 ### Frontend
-- React (Functional Components)
-- React Router DOM
-- EmailJS (Booking form integration)
-- CSS with inline styles
+- React (Functional Components, Hooks)
+- React Router DOM for SPA navigation
+- EmailJS for sending booking inquiries
+- jsPDF for generating downloadable PDF itineraries
+- CSS with inline styles and custom hover effects
+- Floating WhatsApp integration for easy contact
 
 ### Backend
-- Node.js
-- Express.js
-- MongoDB with Mongoose
-- GridFS for image storage
-- Multer (file uploads)
-- CORS, dotenv
+- Node.js with Express.js RESTful API
+- MongoDB database with Mongoose ODM
+- GridFS for efficient image storage and streaming
+- Multer middleware for handling image uploads
+- CORS enabled for cross-origin requests
+- dotenv for environment variable management
 
 ---
 
@@ -91,6 +96,37 @@ A comprehensive full-stack **tourism website** developed using **React, Node.js,
 | comment   | Comment message           |
 
 ---
+
+## 🎯 Key Functionalities Explained
+
+### Navigation Bar with Hover Effects
+- Responsive navigation menu with smooth hover animations for links
+- Dropdown submenus (if any) appear on hover with transitions
+- Accessible on desktop and mobile devices
+
+### Floating WhatsApp Button
+- Persistent floating WhatsApp icon at bottom-right of the page
+- Opens WhatsApp chat window with preset number/message when clicked
+- Styled for visibility without obstructing content
+
+### Booking Form & EmailJS Integration
+- Users can submit tour inquiries via an easy-to-use form
+- Form data sent via EmailJS to designated email for instant notifications
+- Validation and feedback provided on successful submission
+
+## Download Itinerary PDF with jsPDF
+- Each tour details page includes a Download Itinerary button
+- Clicking generates a well-formatted PDF with tour info and itinerary details
+- PDF can be saved or printed by users directly from browser
+
+## Gallery Image Hover Effects
+- Gallery images display zoom or fade effect on hover for engagement
+- Smooth CSS transitions to enhance user experience
+
+## Admin Dashboard
+- Secure login to access admin-only pages
+- CRUD operations for tours, blogs, gallery images, and homepage content
+- Changes persist in MongoDB and instantly reflect on the frontend
 
 ## 📩 Contact
 
