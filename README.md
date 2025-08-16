@@ -33,7 +33,7 @@ A comprehensive full-stack **tourism website** developed using **React, Node.js,
 
 ## 🚀 Live Demo
 
-[![Watch the Demo](./demo.PNG)](https://drive.google.com/file/d/1lz6XZQdh3ugojIJKEqjyso21IzwtwrdD/view?usp=sharing)
+[![Watch the Demo](./demo.PNG)](https://drive.google.com/file/d/1koBIxgF8WqgaSHSK5YOILy-ix7KWS3xD/view?usp=sharing)
 
 ---
 
