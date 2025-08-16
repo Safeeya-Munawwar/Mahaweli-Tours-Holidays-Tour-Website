@@ -11,11 +11,13 @@ A comprehensive full-stack **tourism website** developed using **React, Node.js,
 - View **Tour Details** with descriptions, images, and pricing
 - **Booking Form** integrated with EmailJS for direct inquiries
 - Download detailed **Itinerary PDF** for tours using **jsPDF**
+- **Floating "Book Tour"** Button on all pages for quick access
 - Read engaging **Travel Blog** posts with images
 - Explore a stunning **Gallery** with smooth hover image effects
 - Responsive **Floating WhatsApp** button for instant contact
 - Interactive **Navigation Bar** with hover effects for better UX
 - View homepage stats, achievements, and highlights updated live
+- Fully responsive and mobile-friendly across devices
 
 ### 🔐 Admin Panel
 - Secure Admin Login with protected routes
@@ -25,6 +27,7 @@ A comprehensive full-stack **tourism website** developed using **React, Node.js,
     - Gallery Images (using GridFS for scalable image storage)
     - Homepage content (headline, intro text, visitor stats)
 - Real-time content updates reflected on the public website
+- Manage all floating buttons and live UI elements
 
 ---
 
@@ -42,7 +45,8 @@ A comprehensive full-stack **tourism website** developed using **React, Node.js,
 - EmailJS for sending booking inquiries
 - jsPDF for generating downloadable PDF itineraries
 - CSS with inline styles and custom hover effects
-- Floating WhatsApp integration for easy contact
+- Floating WhatsApp and Book Tour buttons for UX
+- Fully responsive layouts for desktop, tablet, and mobile
 
 ### Backend
 - Node.js with Express.js RESTful API
@@ -104,10 +108,11 @@ A comprehensive full-stack **tourism website** developed using **React, Node.js,
 - Dropdown submenus (if any) appear on hover with transitions
 - Accessible on desktop and mobile devices
 
-### Floating WhatsApp Button
-- Persistent floating WhatsApp icon at bottom-right of the page
-- Opens WhatsApp chat window with preset number/message when clicked
-- Styled for visibility without obstructing content
+### Floating WhatsApp & Book Tour Buttons
+- Persistent buttons visible on all pages
+- WhatsApp button opens chat with preset message/number
+- Book Tour button scrolls to booking form or opens modal for inquiries
+- Stylish, unobtrusive, and user-friendly
 
 ### Booking Form & EmailJS Integration
 - Users can submit tour inquiries via an easy-to-use form
@@ -127,6 +132,11 @@ A comprehensive full-stack **tourism website** developed using **React, Node.js,
 - Secure login to access admin-only pages
 - CRUD operations for tours, blogs, gallery images, and homepage content
 - Changes persist in MongoDB and instantly reflect on the frontend
+
+## Fully Device-Friendly
+- Mobile-first responsive design
+- Works seamlessly on desktop, tablet, and smartphones
+- Interactive floating buttons adapt to screen size
 
 ## 🚀 Author
  **Safeeya Munawwar**
